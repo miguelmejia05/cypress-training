@@ -6,6 +6,7 @@ export default defineConfig({
   e2e: {
     video: false,
     screenshotOnRunFailure: false,
+    chromeWebSecurity: false,
     setupNodeEvents(on, config) {
       // modify config values examples
       // config.defaultCommandTimeout = 10000

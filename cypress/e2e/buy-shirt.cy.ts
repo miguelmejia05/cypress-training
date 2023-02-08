@@ -1,12 +1,18 @@
 describe('Buy a t-shirt', () => {
 	it('then the t-shirt should be bought', () => {
-		cy.visit('https://www.amazon.com/');
-		cy.get('div[class*=\'search-field\'] input').type('t-shirt');
-		cy.get('div[class*=\'search-submit\'] input').click();
-		cy.get('span[data-component-type*=\'search-results\'] div[data-component-type*=\'search-result\']:nth-child(3)')
-			.click();
-		cy.get('input#add-to-cart-button').click();
-		cy.get('input[name*=\'Checkout\']:first-child').click();
-		cy.get('h1').should('contain.text', 'Sign in');
+		cy.visit('https://www.saucedemo.com/');
+		cy.get('input#user-name').type('standard_user');
+		cy.get('input#password').type('secret_sauce');
+		cy.get('input#login-button').click();
+		cy.get('button[data-test*="-bolt-t-shirt"]').click();
+		cy.get('.shopping_cart_link').click();
+		cy.get('#checkout').click();
+		cy.get('input#first-name').type('John');
+		cy.get('input#last-name').type('Doe');
+		cy.get('input#postal-code').type('Doe');
+		cy.get('input#continue').click();
+		cy.get('.inventory_item_name').should('contain.text', 'Sauce Labs Bolt T-Shirt');
+		cy.get('#finish').click();
+		cy.get('h2').should('contain.text', 'THANK YOU FOR YOUR ORDER');
 	});
 });
