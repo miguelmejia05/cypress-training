@@ -9,7 +9,7 @@ describe('Buy a t-shirt', () => {
 	it('then the t-shirt should be bought', () => {
 		loginPage.visitLoginPage();
 		loginPage.logIn();
-		productsPage.selectProductAndGoToShoppingCart();
+		productsPage.selectProductAndGoToShoppingCart('Sauce Labs Bolt T-Shirt');
 		shoppingCartPage.goToCheckout();
 		checkoutPage.fillPersonalInformationAndContinue();
 		checkoutPage.checkProductIsTShirt();
