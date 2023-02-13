@@ -7,6 +7,17 @@ export default defineConfig({
     video: false,
     screenshotOnRunFailure: false,
     chromeWebSecurity: false,
+    reporter: "cypress-multi-reporters",
+    reporterOptions: {
+      reporterEnabled: "mochawesome",
+      mochawesomeReporterOptions: {
+      reportDir: "cypress/reports/mocha",
+      quite: true,
+      overwrite: false,
+      html: false,
+      json: true,
+      },
+    },
     setupNodeEvents(on, config) {
       // modify config values examples
       // config.defaultCommandTimeout = 10000
