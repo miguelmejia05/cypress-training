@@ -18,7 +18,7 @@ class IFramePage {
 
     public goToCssPageInFrame(){
         cy.iframe(this.iframe).find(this.cssButton).click();
-        cy.wait(1000);
+        cy.wait(5000);
     }
       
     public getFrameTitle(frameTitle: string){
