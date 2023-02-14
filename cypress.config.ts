@@ -8,6 +8,7 @@ export default defineConfig({
     screenshotOnRunFailure: false,
     chromeWebSecurity: false,
     reporter: "cypress-multi-reporters",
+    trashAssetsBeforeRuns: true,
     reporterOptions: {
       reporterEnabled: "mochawesome",
       mochawesomeReporterOptions: {

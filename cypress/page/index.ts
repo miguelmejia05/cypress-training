@@ -4,3 +4,4 @@ export { ShoppingCartPage } from "./shoppingCart.page";
 export { CheckoutPage } from "./checkout.page";
 export { FormPage } from "./form.page";
 export { UploadPage } from "./upload.page";
+export { DownloadPage } from "./download.page";
